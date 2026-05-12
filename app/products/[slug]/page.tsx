@@ -45,8 +45,28 @@ export default async function ProductDetailPage({ params }: Props) {
     'EUR.1 Movement Certificate (where applicable)',
   ]
 
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.short_description,
+    sku: product.sku,
+    image: product.hero_image_url ? `https://olea-wholesale.com${product.hero_image_url}` : undefined,
+    brand: { '@type': 'Brand', name: 'Olea Wholesale' },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: product.base_currency,
+      price: (product.base_unit_price_cents / 100).toFixed(2),
+      availability: product.status === 'active' ? 'https://schema.org/InStock' : product.status === 'backorder' ? 'https://schema.org/BackOrder' : 'https://schema.org/LimitedAvailability',
+    },
+  }
+
   return (
     <section className="py-8 md:py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <Container>
         {/* Breadcrumbs */}
         <nav className="mb-6 flex items-center gap-2 font-label text-label-sm text-on-surface-variant">

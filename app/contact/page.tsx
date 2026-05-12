@@ -9,9 +9,28 @@ export const metadata: Metadata = {
     'Get in touch with Olea Wholesale. Reach our team for partnership inquiries, press, careers, or general questions.',
 }
 
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Olea Wholesale Corp.',
+  url: 'https://olea-wholesale.com',
+  telephone: '+351917379662',
+  email: 'sales@olea-wholesale.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lisbon',
+    addressCountry: 'PT',
+  },
+  openingHours: 'Mo-Fr 09:00-18:00',
+}
+
 export default function ContactPage() {
   return (
     <section className="py-12 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1fr_380px]">
           {/* Form */}
