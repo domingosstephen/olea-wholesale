@@ -24,24 +24,28 @@ const standards = [
 
 export function StandardsSection() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 md:py-24">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="animate-fade-in-up mb-10 text-center md:mb-14">
           <p className="mb-3 font-label text-label-md uppercase tracking-widest text-secondary">
             Quality Assurance
           </p>
-          <h2 className="text-headline-lg text-on-surface">Our Purity Standards</h2>
+          <h2 className="text-[24px] font-semibold leading-tight text-on-surface sm:text-headline-lg">
+            Our Purity Standards
+          </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {standards.map((standard) => (
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
+          {standards.map((standard, i) => (
             <div
               key={standard.title}
-              className="rounded-xl border border-outline-variant bg-surface-container-lowest p-stack-lg"
+              className={`animate-fade-in-up hover-lift rounded-2xl border border-outline-variant bg-surface-container-lowest p-6 sm:p-8 delay-${(i + 1) * 100}`}
             >
-              <standard.icon className="mb-4 h-8 w-8 text-on-surface-variant" strokeWidth={1.5} />
-              <h3 className="mb-2 text-headline-md text-on-surface">{standard.title}</h3>
-              <p className="text-body-md text-on-surface-variant">{standard.description}</p>
+              <div className="mb-4 inline-flex rounded-xl bg-surface-container p-3">
+                <standard.icon className="h-6 w-6 text-secondary" strokeWidth={1.5} />
+              </div>
+              <h3 className="mb-2 text-lg font-semibold text-on-surface sm:text-headline-md">{standard.title}</h3>
+              <p className="text-sm leading-relaxed text-on-surface-variant sm:text-body-md">{standard.description}</p>
             </div>
           ))}
         </div>

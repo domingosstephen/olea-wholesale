@@ -22,36 +22,37 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="border-t border-outline-variant bg-surface-container-lowest">
-      <Container className="py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+      <Container className="py-10 sm:py-16">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand column */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="mb-4 flex items-center gap-2">
-              <Leaf className="h-6 w-6 text-secondary" />
-              <span className="text-xl font-semibold text-on-surface">Olea Wholesale</span>
+          <div className="sm:col-span-2">
+            <Link href="/" className="mb-4 inline-flex items-center gap-2">
+              <Leaf className="h-5 w-5 text-secondary" />
+              <span className="text-lg font-semibold text-on-surface">Olea Wholesale</span>
             </Link>
-            <p className="mb-4 max-w-xs text-body-md text-on-surface-variant">
+            <p className="mb-4 max-w-xs text-sm leading-relaxed text-on-surface-variant">
               Industrial excellence in the global supply of premium cooking oils and vegetable fats.
             </p>
-            <p className="text-label-sm font-label text-on-surface-variant">
-              <a href="https://wa.me/351917379662" className="hover:text-on-surface">
-                +351 917 379 662 (WhatsApp)
-              </a>
-            </p>
+            <a
+              href="https://wa.me/351917379662"
+              className="inline-flex items-center gap-2 rounded-lg bg-surface-container px-3 py-2 text-xs font-medium text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface"
+            >
+              +351 917 379 662 (WhatsApp)
+            </a>
           </div>
 
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="mb-4 font-label text-label-md uppercase tracking-wider text-on-surface">
+              <h3 className="mb-3 font-label text-[11px] uppercase tracking-widest text-on-surface sm:mb-4 sm:text-label-md">
                 {title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-body-md text-on-surface-variant transition-colors hover:text-on-surface"
+                      className="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
                     >
                       {link.label}
                     </Link>
@@ -62,8 +63,8 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 border-t border-outline-variant pt-8">
-          <p className="text-label-sm text-on-surface-variant">
+        <div className="mt-8 border-t border-outline-variant/50 pt-6 sm:mt-12 sm:pt-8">
+          <p className="text-xs text-on-surface-variant">
             &copy; {new Date().getFullYear()} Olea Wholesale Corp. Industrial Excellence in Supply.
           </p>
         </div>

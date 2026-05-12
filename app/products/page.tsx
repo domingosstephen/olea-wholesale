@@ -31,32 +31,33 @@ export default async function ProductsPage({ searchParams }: Props) {
   const { products, total } = await getProducts({ grade, origin, page })
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-8 sm:py-12 md:py-16">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[240px_1fr]">
-          {/* Sidebar */}
+        <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-12">
+          {/* Sidebar - collapsible on mobile */}
           <Suspense fallback={null}>
             <ProductFilters />
           </Suspense>
 
           {/* Main content */}
           <div>
-            <div className="mb-8 flex items-baseline justify-between">
-              <div>
-                <h1 className="text-display-lg text-on-surface">Industrial Supply Catalog</h1>
-                <p className="mt-2 text-body-lg text-on-surface-variant">
-                  Premium vegetable and seed oils for industrial food processing and wholesale
-                  distribution.
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-[28px] font-bold leading-tight text-on-surface sm:text-[36px] md:text-display-lg">
+                Industrial Supply Catalog
+              </h1>
+              <div className="mt-2 flex items-baseline justify-between">
+                <p className="text-sm text-on-surface-variant sm:text-body-lg">
+                  Premium vegetable and seed oils for industrial food processing.
+                </p>
+                <p className="hidden text-sm text-on-surface-variant md:block">
+                  {products.length} of {total} Products
                 </p>
               </div>
-              <p className="hidden text-body-md text-on-surface-variant md:block">
-                Showing {products.length} of {total} Products
-              </p>
             </div>
 
             {products.length > 0 ? (
               <>
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                   {products.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}

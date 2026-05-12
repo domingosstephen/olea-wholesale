@@ -69,66 +69,66 @@ export default async function ProductDetailPage({ params }: Props) {
       />
       <Container>
         {/* Breadcrumbs */}
-        <nav className="mb-6 flex items-center gap-2 font-label text-label-sm text-on-surface-variant">
+        <nav className="mb-4 flex items-center gap-2 font-label text-[11px] text-on-surface-variant sm:mb-6 sm:text-label-sm">
           <Link href="/products" className="uppercase tracking-wider hover:text-on-surface">
             Catalogue
           </Link>
           <ChevronRight className="h-3 w-3" />
-          <span className="uppercase tracking-wider text-on-surface">{product.name}</span>
+          <span className="truncate uppercase tracking-wider text-on-surface">{product.name}</span>
         </nav>
 
         {/* Main layout */}
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left: Image + info cards */}
-          <div className="space-y-6">
-            <div className="relative aspect-square overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low">
+          <div className="animate-fade-in space-y-4 sm:space-y-6">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low sm:aspect-square">
               {product.hero_image_url && (
                 <Image
                   src={product.hero_image_url}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-5">
-                <ShieldCheck className="mb-3 h-6 w-6 text-on-surface-variant" strokeWidth={1.5} />
-                <h4 className="mb-1 font-label text-label-md text-on-surface">Quality Assurance</h4>
-                <p className="text-label-sm text-on-surface-variant">
-                  Cold-pressed within 24 hours of harvest in {origin || 'origin facility'}.
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="rounded-2xl border border-outline-variant bg-surface-container-lowest p-4 sm:p-5">
+                <ShieldCheck className="mb-2 h-5 w-5 text-secondary sm:mb-3 sm:h-6 sm:w-6" strokeWidth={1.5} />
+                <h4 className="mb-1 text-xs font-semibold text-on-surface sm:text-sm">Quality Assurance</h4>
+                <p className="text-[11px] leading-relaxed text-on-surface-variant sm:text-xs">
+                  Processed at certified origin facility in {origin || 'origin'}.
                 </p>
               </div>
-              <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-5">
-                <FlaskConical className="mb-3 h-6 w-6 text-on-surface-variant" strokeWidth={1.5} />
-                <h4 className="mb-1 font-label text-label-md text-on-surface">Lab Certified</h4>
-                <p className="text-label-sm text-on-surface-variant">
-                  Every batch undergoes rigorous ISO 22000 laboratory testing.
+              <div className="rounded-2xl border border-outline-variant bg-surface-container-lowest p-4 sm:p-5">
+                <FlaskConical className="mb-2 h-5 w-5 text-secondary sm:mb-3 sm:h-6 sm:w-6" strokeWidth={1.5} />
+                <h4 className="mb-1 text-xs font-semibold text-on-surface sm:text-sm">Lab Certified</h4>
+                <p className="text-[11px] leading-relaxed text-on-surface-variant sm:text-xs">
+                  Every batch undergoes ISO 22000 laboratory testing.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Right: Product info + configurator */}
-          <div className="space-y-6">
+          <div className="animate-fade-in-up space-y-4 sm:space-y-6">
             {origin && (
-              <span className="inline-block rounded-lg bg-secondary-container px-3 py-1 font-label text-label-sm text-on-secondary-container">
+              <span className="inline-block rounded-full bg-secondary-container px-3 py-1 text-[11px] font-semibold text-on-secondary-container">
                 {product.origin_country?.toUpperCase()} ORIGIN
               </span>
             )}
 
-            <h1 className="text-display-lg text-on-surface">{product.name}</h1>
+            <h1 className="text-[28px] font-bold leading-tight text-on-surface sm:text-[36px] md:text-display-lg">{product.name}</h1>
 
-            <p className="text-body-lg text-on-surface-variant">{product.short_description}</p>
+            <p className="text-sm leading-relaxed text-on-surface-variant sm:text-body-lg">{product.short_description}</p>
 
             <div>
-              <span className="text-display-lg text-on-surface">
+              <span className="text-[28px] font-bold text-on-surface sm:text-[36px]">
                 {formatCurrency(product.base_unit_price_cents, product.base_currency)}
               </span>
-              <span className="ml-2 text-body-md text-on-surface-variant">
+              <span className="ml-2 text-sm text-on-surface-variant">
                 / {product.base_unit} (Bulk Base)
               </span>
             </div>
@@ -168,12 +168,12 @@ export default async function ProductDetailPage({ params }: Props) {
 
         {/* Technical Specifications */}
         {product.specifications && (
-          <section className="mt-16">
-            <div className="mb-6 flex items-center gap-3">
+          <section className="mt-10 sm:mt-16">
+            <div className="mb-4 flex items-center gap-3 sm:mb-6">
               <div className="h-8 w-1 rounded-full bg-secondary" />
               <div>
-                <h2 className="text-headline-lg text-on-surface">Technical Specifications</h2>
-                <p className="text-body-md text-on-surface-variant">
+                <h2 className="text-xl font-semibold text-on-surface sm:text-headline-lg">Technical Specifications</h2>
+                <p className="text-xs text-on-surface-variant sm:text-body-md">
                   Chemical analysis verified by Independent COI Certified Laboratory.
                 </p>
               </div>
