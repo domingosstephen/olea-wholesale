@@ -17,6 +17,14 @@ const labelMap: Record<string, string> = {
   saturated_fat: 'Saturated Fat',
   polar_compounds: 'Polar Compounds',
   blend_ratio: 'Blend Ratio',
+  moisture: 'Moisture Content',
+  phosphorus: 'Phosphorus Content',
+  color: 'Color',
+  melting_point: 'Melting Point',
+  miu: 'MIU (Moisture, Impurities, Unsaponifiables)',
+  flash_point: 'Flash Point',
+  dobi: 'DOBI (Deterioration of Bleachability Index)',
+  carotene: 'Carotene Content',
 }
 
 export function SpecsTable({ specifications }: SpecsTableProps) {

@@ -5,14 +5,22 @@ import { useCallback } from 'react'
 
 const GRADES = [
   { value: 'Extra Virgin', label: 'Extra Virgin' },
+  { value: 'Refined', label: 'Refined' },
+  { value: 'RBD', label: 'RBD' },
+  { value: 'Crude', label: 'Crude' },
   { value: 'High-Oleic', label: 'High-Oleic' },
-  { value: 'Expeller Pressed', label: 'Refined / Pure' },
+  { value: 'Expeller Pressed', label: 'Expeller Pressed' },
+  { value: 'Feedstock', label: 'Feedstock / UCO' },
 ]
 
 const ORIGINS = [
   { value: 'Spain', label: 'Spain' },
   { value: 'Ukraine', label: 'Ukraine' },
   { value: 'Canada', label: 'Canada' },
+  { value: 'Germany', label: 'Germany' },
+  { value: 'Malaysia', label: 'Malaysia' },
+  { value: 'Indonesia', label: 'Indonesia' },
+  { value: 'EU', label: 'EU' },
   { value: 'Multi-origin', label: 'Multi-origin' },
 ]
 
