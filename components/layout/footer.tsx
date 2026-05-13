@@ -30,9 +30,11 @@ export function Footer() {
               <Leaf className="h-5 w-5 text-secondary" />
               <span className="text-lg font-semibold text-on-surface">Olea Wholesale</span>
             </Link>
-            <p className="mb-4 max-w-xs text-sm leading-relaxed text-on-surface-variant">
+            <p className="mb-2 max-w-xs text-sm leading-relaxed text-on-surface-variant">
               Industrial excellence in the global supply of premium cooking oils and vegetable fats.
             </p>
+            <p className="mb-1 text-xs text-on-surface-variant">Centro Empresas Elospark, R. Cruz 75 Ed. 1</p>
+            <p className="mb-3 text-xs text-on-surface-variant">2725-193 Algueirão-Mem Martins, Portugal</p>
             <a
               href="https://wa.me/351917379662"
               className="inline-flex items-center gap-2 rounded-lg bg-surface-container px-3 py-2 text-xs font-medium text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface"

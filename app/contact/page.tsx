@@ -18,9 +18,12 @@ const localBusinessJsonLd = {
   email: 'sales@olea-wholesale.com',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Lisbon',
+    streetAddress: 'Centro Empresas Elospark, R. Cruz 75 Ed. 1',
+    postalCode: '2725-193',
+    addressLocality: 'Algueirão-Mem Martins',
     addressCountry: 'PT',
   },
+  vatID: 'PT509913423',
   openingHours: 'Mo-Fr 09:00-18:00',
 }
 
@@ -76,7 +79,11 @@ export default function ContactPage() {
                   <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-secondary" strokeWidth={1.5} />
                   <div>
                     <p className="font-medium text-on-surface">Olea Wholesale Corp.</p>
-                    <p className="text-label-sm">Lisbon, Portugal</p>
+                    <p className="text-label-sm">Centro Empresas Elospark</p>
+                    <p className="text-label-sm">R. Cruz 75 Ed. 1</p>
+                    <p className="text-label-sm">2725-193 Algueirão-Mem Martins</p>
+                    <p className="text-label-sm">Portugal</p>
+                    <p className="mt-1 text-label-sm">VAT: PT509913423</p>
                   </div>
                 </div>
               </div>

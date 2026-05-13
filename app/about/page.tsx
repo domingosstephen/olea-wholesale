@@ -41,7 +41,7 @@ const stats = [
 ]
 
 const leadership = [
-  { name: 'Domingos Silva', role: 'Founder & Managing Director', description: '15+ years in international commodities trading and supply chain management.' },
+  { name: 'Stephano Leonessi', role: 'Founder & Managing Director', description: '15+ years in international commodities trading and supply chain management.' },
   { name: 'Maria Santos', role: 'Head of Supply Chain', description: 'Former logistics director at a Fortune 500 food manufacturer.' },
   { name: 'Ahmed Al-Rashid', role: 'Head of Quality Assurance', description: 'PhD in Food Science, former ISO auditor with 10+ years in edible oils QA.' },
 ]
