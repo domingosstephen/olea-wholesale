@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/react'
 import { Nav } from '@/components/layout/nav'
 import { Footer } from '@/components/layout/footer'
+import { WhatsAppButton } from '@/components/layout/whatsapp-button'
 import '@/styles/globals.css'
 
 const inter = Inter({
@@ -56,6 +57,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>
