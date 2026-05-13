@@ -3,38 +3,6 @@ import type { Product, ProductContainer, ProductPricingTier } from '@/types'
 // Hardcoded seed data for development without Supabase
 const SEED_PRODUCTS: Product[] = [
   {
-    id: '1',
-    sku: 'EVOO-SP-1000',
-    slug: 'extra-virgin-olive-oil-spanish',
-    name: 'Premium Extra Virgin Olive Oil',
-    category: 'Olive Oils',
-    grade: 'Extra Virgin',
-    origin_country: 'Spain',
-    origin_region: 'Jaen',
-    short_description: 'Bulk industrial supply for premium food manufacturers and high-end restaurant chains. Harvest 2023/24.',
-    long_description: 'Our Spanish Extra Virgin Olive Oil is cold-pressed within 24 hours of harvest in Jaen, Spain. This premium-grade oil is ideal for high-end food manufacturing, restaurant chains, and specialty food producers who demand the highest quality. Every batch undergoes rigorous ISO 22000 laboratory testing for acidity, peroxide value, and UV absorbency to ensure consistent quality.',
-    specifications: {
-      free_acidity: { result: '0.24%', limit: '≤ 0.8%' },
-      peroxide_value: { result: '7.2 mEq O2/kg', limit: '≤ 20' },
-      absorbency_k270: { result: '0.14', limit: '≤ 0.22' },
-      absorbency_k232: { result: '1.65', limit: '≤ 2.50' },
-      wax_content: { result: '85 mg/kg', limit: '≤ 150' },
-    },
-    certifications: ['ISO 22000', 'EU Organic'],
-    hero_image_url: null,
-    gallery_images: null,
-    base_unit_price_cents: 485,
-    base_currency: 'EUR',
-    base_unit: 'liter',
-    moq_liters: 1000,
-    lead_time_days: 21,
-    port_of_origin: 'Valencia, Spain',
-    status: 'active',
-    display_order: 1,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString(),
-  },
-  {
     id: '2',
     sku: 'SFO-UA-200',
     slug: 'refined-sunflower-oil-high-oleic',
@@ -325,12 +293,6 @@ const SEED_PRODUCTS: Product[] = [
 ]
 
 const SEED_CONTAINERS: Record<string, ProductContainer[]> = {
-  '1': [
-    { id: 'c1', product_id: '1', container_type: '20l_jerrycan', display_name: '20L Jerrycan', volume_liters: 20, unit_price_cents: 540, is_default: false, display_order: 1 },
-    { id: 'c2', product_id: '1', container_type: '200l_drum', display_name: '200L Industrial Drum', volume_liters: 200, unit_price_cents: 510, is_default: false, display_order: 2 },
-    { id: 'c3', product_id: '1', container_type: '1000l_ibc', display_name: '1000L IBC Tote', volume_liters: 1000, unit_price_cents: 485, is_default: true, display_order: 3 },
-    { id: 'c4', product_id: '1', container_type: 'flexitank', display_name: 'Flexitank (24,000L)', volume_liters: 24000, unit_price_cents: 460, is_default: false, display_order: 4 },
-  ],
   '2': [
     { id: 'c5', product_id: '2', container_type: '200l_drum', display_name: '200L Industrial Drum', volume_liters: 200, unit_price_cents: 380, is_default: true, display_order: 1 },
     { id: 'c6', product_id: '2', container_type: '1000l_ibc', display_name: '1000L IBC Tote', volume_liters: 1000, unit_price_cents: 355, is_default: false, display_order: 2 },
@@ -376,12 +338,6 @@ const SEED_CONTAINERS: Record<string, ProductContainer[]> = {
 }
 
 const SEED_PRICING_TIERS: Record<string, ProductPricingTier[]> = {
-  '1': [
-    { id: 't1', product_id: '1', tier_name: 'Standard', min_liters: 1000, max_liters: 5000, unit_price_cents: 485, label: 'Ideal for Boutique Bottling', is_inquiry_only: false, display_order: 1 },
-    { id: 't2', product_id: '1', tier_name: 'Business', min_liters: 5001, max_liters: 20000, unit_price_cents: 442, label: 'Logistics Optimized (FCL)', is_inquiry_only: false, display_order: 2 },
-    { id: 't3', product_id: '1', tier_name: 'Enterprise', min_liters: 20001, max_liters: 100000, unit_price_cents: 415, label: 'Contract Supply Ready', is_inquiry_only: false, display_order: 3 },
-    { id: 't4', product_id: '1', tier_name: 'Global B2B', min_liters: 100001, max_liters: null, unit_price_cents: null, label: null, is_inquiry_only: true, display_order: 4 },
-  ],
   '2': [
     { id: 't5', product_id: '2', tier_name: 'Standard', min_liters: 1000, max_liters: 10000, unit_price_cents: 380, label: 'Drum Quantities', is_inquiry_only: false, display_order: 1 },
     { id: 't6', product_id: '2', tier_name: 'Business', min_liters: 10001, max_liters: 50000, unit_price_cents: 355, label: 'IBC/Flexitank Pricing', is_inquiry_only: false, display_order: 2 },

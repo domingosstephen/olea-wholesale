@@ -4,7 +4,6 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
 
 const GRADES = [
-  { value: 'Extra Virgin', label: 'Extra Virgin' },
   { value: 'Refined', label: 'Refined' },
   { value: 'RBD', label: 'RBD' },
   { value: 'Crude', label: 'Crude' },
