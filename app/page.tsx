@@ -1,6 +1,8 @@
 import { Hero } from '@/components/marketing/hero'
+import { ProductHighlights } from '@/components/marketing/product-highlights'
 import { StandardsSection } from '@/components/marketing/standards-section'
 import { LogisticsSection } from '@/components/marketing/logistics-section'
+import { ClosingCTA } from '@/components/marketing/closing-cta'
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -24,8 +26,10 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <Hero />
+      <ProductHighlights />
       <StandardsSection />
       <LogisticsSection />
+      <ClosingCTA />
     </>
   )
 }
