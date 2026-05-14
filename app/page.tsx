@@ -1,7 +1,6 @@
 import { Hero } from '@/components/marketing/hero'
 import { StandardsSection } from '@/components/marketing/standards-section'
 import { LogisticsSection } from '@/components/marketing/logistics-section'
-import { CTABanner } from '@/components/marketing/cta-banner'
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -27,7 +26,6 @@ export default function HomePage() {
       <Hero />
       <StandardsSection />
       <LogisticsSection />
-      <CTABanner />
     </>
   )
 }
