@@ -43,6 +43,18 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Olea Wholesale',
+    images: [
+      {
+        url: '/images/site/hero.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Olea Wholesale — Industrial Excellence in Bulk Cooking Oils',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/site/hero.jpeg'],
   },
 }
 

@@ -48,9 +48,9 @@ export default function ContactPage() {
           {/* Contact info sidebar */}
           <aside className="space-y-6 lg:mt-24">
             <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6">
-              <h3 className="mb-4 font-label text-label-md uppercase tracking-wider text-on-surface">
+              <h2 className="mb-4 font-label text-label-md uppercase tracking-wider text-on-surface">
                 Get in Touch
-              </h3>
+              </h2>
 
               <div className="space-y-4">
                 <a
@@ -90,7 +90,7 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-xl border border-outline-variant bg-surface-container-low p-6">
-              <h3 className="mb-2 font-label text-label-md text-on-surface">Business Hours</h3>
+              <h2 className="mb-2 font-label text-label-md text-on-surface">Business Hours</h2>
               <div className="space-y-1 text-body-md text-on-surface-variant">
                 <p>Monday - Friday: 9:00 - 18:00 WET</p>
                 <p>Saturday - Sunday: Closed</p>

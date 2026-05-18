@@ -45,6 +45,24 @@ export default async function ProductDetailPage({ params }: Props) {
     'EUR.1 Movement Certificate (where applicable)',
   ]
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Catalogue',
+        item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.megatitulocomercio.com'}/products`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: product.name,
+      },
+    ],
+  }
+
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -63,6 +81,10 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <section className="py-8 md:py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}

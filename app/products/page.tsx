@@ -22,6 +22,14 @@ interface Props {
   }>
 }
 
+const collectionJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Industrial Supply Catalog',
+  description: 'Browse our full range of premium wholesale cooking oils. Extra virgin olive oil, sunflower, canola, and custom blends for industrial food manufacturing.',
+  url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.megatitulocomercio.com'}/products`,
+}
+
 export default async function ProductsPage({ searchParams }: Props) {
   const params = await searchParams
   const grade = params.grade?.split(',').filter(Boolean)
@@ -32,6 +40,10 @@ export default async function ProductsPage({ searchParams }: Props) {
 
   return (
     <section className="py-8 sm:py-12 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
       <Container>
         <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-12">
           {/* Sidebar - collapsible on mobile */}

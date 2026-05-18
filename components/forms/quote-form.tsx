@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import Link from 'next/link'
 import { Loader2 } from 'lucide-react'
 import { quoteInquirySchema, specsInquirySchema, type QuoteInquiryInput, type SpecsInquiryInput } from '@/lib/validation/inquiry'
 import { FormField } from './form-field'
@@ -266,13 +267,13 @@ export function QuoteForm({
         />
         <span className="text-body-md text-on-surface-variant">
           I agree to the{' '}
-          <a href="/privacy" target="_blank" className="text-secondary hover:underline">
+          <Link href="/privacy" target="_blank" className="text-secondary hover:underline">
             Privacy Policy
-          </a>{' '}
+          </Link>{' '}
           and{' '}
-          <a href="/terms" target="_blank" className="text-secondary hover:underline">
+          <Link href="/terms" target="_blank" className="text-secondary hover:underline">
             Terms of Service
-          </a>
+          </Link>
           . <span className="text-error">*</span>
         </span>
       </label>
