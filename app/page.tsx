@@ -8,7 +8,7 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Olea Wholesale Corp.',
-  url: 'https://olea-wholesale.com',
+  url: 'https://www.megatitulocomercio.com',
   description: 'Premium-grade culinary oils supplied at scale for industrial food manufacturers and restaurant chains.',
   contactPoint: {
     '@type': 'ContactPoint',

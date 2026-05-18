@@ -19,7 +19,7 @@ export default function TermsPage() {
           <p>Last updated: January 2025</p>
 
           <h2 className="text-headline-md text-on-surface">1. Acceptance of Terms</h2>
-          <p>By accessing and using the Olea Wholesale website (olea-wholesale.com), you agree to be bound by these Terms of Service. If you do not agree, please do not use this website.</p>
+          <p>By accessing and using the Olea Wholesale website (megatitulocomercio.com), you agree to be bound by these Terms of Service. If you do not agree, please do not use this website.</p>
 
           <h2 className="text-headline-md text-on-surface">2. Services Description</h2>
           <p>This website provides information about Olea Wholesale&apos;s bulk cooking oil products and services. It allows prospective buyers to browse our product catalog and submit inquiries for quotation. This website does not process orders or payments.</p>

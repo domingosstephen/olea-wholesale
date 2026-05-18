@@ -65,7 +65,7 @@ export async function sendConfirmationEmail(data: InquiryInput) {
       <hr style="border: none; border-top: 1px solid #c6c6cd; margin: 24px 0;" />
 
       <p style="font-size: 12px; color: #76777d;">
-        Olea Wholesale Corp. · <a href="https://olea-wholesale.com/products" style="color: #745b11;">Browse our catalog</a>
+        Olea Wholesale Corp. · <a href="https://www.megatitulocomercio.com/products" style="color: #745b11;">Browse our catalog</a>
       </p>
     </div>
   `

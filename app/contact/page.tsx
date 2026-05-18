@@ -13,7 +13,7 @@ const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Olea Wholesale Corp.',
-  url: 'https://olea-wholesale.com',
+  url: 'https://www.megatitulocomercio.com',
   telephone: '+351917379662',
   email: 'sales@olea-wholesale.com',
   address: {

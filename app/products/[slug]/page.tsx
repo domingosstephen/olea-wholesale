@@ -51,7 +51,7 @@ export default async function ProductDetailPage({ params }: Props) {
     name: product.name,
     description: product.short_description,
     sku: product.sku,
-    image: product.hero_image_url ? `https://olea-wholesale.com${product.hero_image_url}` : undefined,
+    image: product.hero_image_url ? `https://www.megatitulocomercio.com${product.hero_image_url}` : undefined,
     brand: { '@type': 'Brand', name: 'Olea Wholesale' },
     offers: {
       '@type': 'Offer',
