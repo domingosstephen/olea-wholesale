@@ -24,7 +24,7 @@ export async function ProductHighlights() {
               <Link href={`/products/${product.slug}`} className="block">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-container">
                   <Image
-                    src={product.hero_image_url}
+                    src={product.hero_image_url || '/images/products/placeholder.jpg'}
                     alt={product.name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
