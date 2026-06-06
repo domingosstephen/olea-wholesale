@@ -64,6 +64,7 @@ export function ContactForm() {
     }
 
     try {
+      // Send to API (Supabase storage + Resend if configured)
       const res = await fetch('/api/inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -74,6 +75,23 @@ export function ContactForm() {
         const body = await res.json().catch(() => null)
         throw new Error(body?.error || 'Something went wrong. Please try again.')
       }
+
+      // Send email notification via Web3Forms (client-side)
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'ab6a127e-e17e-4745-ba90-c0d87603adb9',
+          subject: `[CONTACT] ${data.company_name} — ${data.subject}`,
+          from_name: `${data.contact_name} (${data.company_name})`,
+          email: data.email,
+          phone: data.phone || 'N/A',
+          country: data.country,
+          inquiry_type: 'contact',
+          subject_line: data.subject,
+          message: data.message,
+        }),
+      }).catch(() => {})
 
       setSubmitted(true)
     } catch (err) {

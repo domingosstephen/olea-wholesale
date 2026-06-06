@@ -86,6 +86,7 @@ export function QuoteForm({
     }
 
     try {
+      // Send to API (Supabase storage + Resend if configured)
       const res = await fetch('/api/inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -96,6 +97,25 @@ export function QuoteForm({
         const body = await res.json().catch(() => null)
         throw new Error(body?.error || 'Something went wrong. Please try again.')
       }
+
+      // Send email notification via Web3Forms (client-side)
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'ab6a127e-e17e-4745-ba90-c0d87603adb9',
+          subject: `[${inquiryType.replace('_', ' ').toUpperCase()}] ${data.company_name}`,
+          from_name: `${data.contact_name} (${data.company_name})`,
+          email: data.email,
+          phone: data.phone || 'N/A',
+          country: data.country,
+          inquiry_type: inquiryType.replace('_', ' '),
+          product: (data as QuoteInquiryInput).product_slug || 'N/A',
+          quantity: (data as QuoteInquiryInput).estimated_quantity_liters ? `${(data as QuoteInquiryInput).estimated_quantity_liters} liters` : 'N/A',
+          timeline: (data as QuoteInquiryInput).timeline || 'N/A',
+          message: data.message || 'No message',
+        }),
+      }).catch(() => {})
 
       setSubmitted(true)
     } catch (err) {
