@@ -122,14 +122,41 @@ export async function POST(request: NextRequest) {
       console.log('[DEV] Inquiry received:', JSON.stringify(inquiryData, null, 2))
     }
 
-    // Send emails (fire-and-forget, don't fail the request)
+    // Send notification via Web3Forms (always works, no config needed)
+    try {
+      const productName = (inquiryData.product_name_snapshot as string) || ''
+      const quantity = (inquiryData.estimated_quantity_liters as number) || 0
+
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'ab6a127e-e17e-4745-ba90-c0d87603adb9',
+          subject: `[${data.type.replace('_', ' ').toUpperCase()}] ${data.company_name}${productName ? ` — ${productName}` : ''}${quantity ? ` — ${quantity}L` : ''}`,
+          from_name: `${data.contact_name} (${data.company_name})`,
+          email: data.email,
+          phone: data.phone || 'N/A',
+          country: data.country,
+          inquiry_type: data.type.replace('_', ' '),
+          product: productName || 'N/A',
+          quantity: quantity ? `${quantity} liters` : 'N/A',
+          timeline: 'timeline' in data ? data.timeline : 'N/A',
+          message: data.message || 'No message',
+          source_url: data.source_url || 'N/A',
+        }),
+      })
+    } catch (emailError) {
+      console.error('Web3Forms send failed:', emailError)
+    }
+
+    // Send Resend emails if configured (optional, fire-and-forget)
     try {
       await Promise.all([
         sendConfirmationEmail(data),
         sendNotificationEmail(data, inquiryData),
       ])
     } catch (emailError) {
-      console.error('Email send failed:', emailError)
+      console.error('Resend email failed:', emailError)
     }
 
     return NextResponse.json({ ok: true, id: inquiryId })
