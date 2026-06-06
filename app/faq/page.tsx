@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'How do I request a quote?',
     answer:
-      'You can request a quote through our online quote form, via WhatsApp at +351 917 379 662, or by emailing sales@olea-wholesale.com. Please include the product, quantity, destination port, and preferred container type for the most accurate pricing.',
+      'You can request a quote through our online quote form, via WhatsApp at +351 917 379 662, or by emailing infomegatitulocomerciotradelda@gmail.com. Please include the product, quantity, destination port, and preferred container type for the most accurate pricing.',
   },
 ]
 

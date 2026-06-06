@@ -2,7 +2,7 @@ import type { InquiryInput } from '@/lib/validation/inquiry'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'hello@olea-wholesale.com'
-const OPS_EMAIL = process.env.RESEND_OPS_EMAIL || 'sales@olea-wholesale.com'
+const OPS_EMAIL = process.env.RESEND_OPS_EMAIL || 'infomegatitulocomerciotradelda@gmail.com'
 
 async function sendEmail(to: string, subject: string, html: string) {
   if (!RESEND_API_KEY) {

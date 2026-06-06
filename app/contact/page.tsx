@@ -15,7 +15,7 @@ const localBusinessJsonLd = {
   name: 'Olea Wholesale Corp.',
   url: 'https://www.megatitulocomercio.com',
   telephone: '+351917379662',
-  email: 'sales@olea-wholesale.com',
+  email: 'infomegatitulocomerciotradelda@gmail.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Centro Empresas Elospark, R. Cruz 75 Ed. 1',
@@ -65,12 +65,12 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="mailto:sales@olea-wholesale.com"
+                  href="mailto:infomegatitulocomerciotradelda@gmail.com"
                   className="flex items-start gap-3 text-body-md text-on-surface-variant transition-colors hover:text-on-surface"
                 >
                   <Mail className="mt-0.5 h-5 w-5 flex-shrink-0 text-secondary" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium text-on-surface">sales@olea-wholesale.com</p>
+                    <p className="font-medium text-on-surface">infomegatitulocomerciotradelda@gmail.com</p>
                     <p className="text-label-sm">Response within 1 business day</p>
                   </div>
                 </a>

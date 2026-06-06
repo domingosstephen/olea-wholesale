@@ -37,7 +37,7 @@ export default function TermsPage() {
 
           <h2 className="text-headline-md text-on-surface">8. Contact</h2>
           <p>For questions about these terms, contact:</p>
-          <p>Olea Wholesale Corp.<br />Centro Empresas Elospark, R. Cruz 75 Ed. 1<br />2725-193 Algueirão-Mem Martins, Portugal<br />VAT: PT509913423<br />Email: sales@olea-wholesale.com<br />Phone: +351 917 379 662</p>
+          <p>Olea Wholesale Corp.<br />Centro Empresas Elospark, R. Cruz 75 Ed. 1<br />2725-193 Algueirão-Mem Martins, Portugal<br />VAT: PT509913423<br />Email: infomegatitulocomerciotradelda@gmail.com<br />Phone: +351 917 379 662</p>
         </div>
       </Container>
     </section>

@@ -35,12 +35,20 @@ export function Footer() {
             </p>
             <p className="mb-1 text-xs text-on-surface-variant">Centro Empresas Elospark, R. Cruz 75 Ed. 1</p>
             <p className="mb-3 text-xs text-on-surface-variant">2725-193 Algueirão-Mem Martins, Portugal</p>
-            <a
-              href="https://wa.me/351917379662"
-              className="inline-flex items-center gap-2 rounded-lg bg-surface-container px-3 py-2 text-xs font-medium text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface"
-            >
-              +351 917 379 662 (WhatsApp)
-            </a>
+            <div className="flex flex-col gap-2">
+              <a
+                href="mailto:infomegatitulocomerciotradelda@gmail.com"
+                className="inline-flex items-center gap-2 rounded-lg bg-surface-container px-3 py-2 text-xs font-medium text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface"
+              >
+                infomegatitulocomerciotradelda@gmail.com
+              </a>
+              <a
+                href="https://wa.me/351917379662"
+                className="inline-flex items-center gap-2 rounded-lg bg-surface-container px-3 py-2 text-xs font-medium text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface"
+              >
+                +351 917 379 662 (WhatsApp)
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}

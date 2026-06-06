@@ -39,14 +39,14 @@ export default function PrivacyPage() {
           <p>Your data is stored securely using Supabase (PostgreSQL) with row-level security enabled. We do not sell or share your personal information with third parties for marketing purposes.</p>
 
           <h2 className="text-headline-md text-on-surface">4. Data Retention</h2>
-          <p>We retain inquiry data for as long as necessary to fulfill our business relationship. You may request deletion of your data at any time by contacting us at sales@olea-wholesale.com.</p>
+          <p>We retain inquiry data for as long as necessary to fulfill our business relationship. You may request deletion of your data at any time by contacting us at infomegatitulocomerciotradelda@gmail.com.</p>
 
           <h2 className="text-headline-md text-on-surface">5. Your Rights</h2>
-          <p>You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at sales@olea-wholesale.com.</p>
+          <p>You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at infomegatitulocomerciotradelda@gmail.com.</p>
 
           <h2 className="text-headline-md text-on-surface">6. Contact</h2>
           <p>For privacy-related questions, contact:</p>
-          <p>Olea Wholesale Corp.<br />Centro Empresas Elospark, R. Cruz 75 Ed. 1<br />2725-193 Algueirão-Mem Martins, Portugal<br />VAT: PT509913423<br />Email: sales@olea-wholesale.com<br />Phone: +351 917 379 662</p>
+          <p>Olea Wholesale Corp.<br />Centro Empresas Elospark, R. Cruz 75 Ed. 1<br />2725-193 Algueirão-Mem Martins, Portugal<br />VAT: PT509913423<br />Email: infomegatitulocomerciotradelda@gmail.com<br />Phone: +351 917 379 662</p>
         </div>
       </Container>
     </section>
