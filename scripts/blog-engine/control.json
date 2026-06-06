@@ -1,0 +1,17 @@
+{
+  "engine": {
+    "enabled": true,
+    "articlesPerRun": 1
+  },
+  "categories": {
+    "product-guide": { "enabled": true, "priority": "high" },
+    "buying-guide": { "enabled": true, "priority": "high" },
+    "comparison": { "enabled": true, "priority": "high" },
+    "market-insight": { "enabled": true, "priority": "medium" },
+    "shipping": { "enabled": true, "priority": "medium" },
+    "how-to": { "enabled": true, "priority": "medium" },
+    "sustainability": { "enabled": true, "priority": "medium" },
+    "regulation": { "enabled": true, "priority": "medium" },
+    "industry-news": { "enabled": true, "priority": "low" }
+  }
+}
