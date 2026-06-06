@@ -130,7 +130,7 @@ export default function AboutPage() {
       </section>
 
       {/* Certifications */}
-      <section className="bg-surface-container-low py-16 md:py-24">
+      <section id="certifications" className="bg-surface-container-low py-16 md:py-24">
         <Container>
           <div className="mb-12 text-center">
             <h2 className="text-headline-lg text-on-surface">Certifications & Standards</h2>

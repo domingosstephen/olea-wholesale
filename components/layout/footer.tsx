@@ -4,9 +4,9 @@ import { Container } from './container'
 
 const footerLinks = {
   Standards: [
-    { href: '/about', label: 'ISO 22000 Certified' },
-    { href: '/about', label: 'Organic Standards' },
-    { href: '/about', label: 'Sustainability Report' },
+    { href: '/about#certifications', label: 'ISO 22000 Certified' },
+    { href: '/about#certifications', label: 'Organic Standards' },
+    { href: '/faq', label: 'FAQ' },
   ],
   Company: [
     { href: '/products', label: 'Products' },

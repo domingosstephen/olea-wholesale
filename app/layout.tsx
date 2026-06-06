@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   description:
     'Premium-grade culinary oils supplied at scale. Bulk olive oil, sunflower, canola, and fryer blends for industrial food manufacturers and restaurant chains.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.megatitulocomercio.com'),
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

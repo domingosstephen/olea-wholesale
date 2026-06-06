@@ -12,11 +12,7 @@ export default function TermsPage() {
       <Container className="max-w-3xl">
         <h1 className="mb-8 text-display-lg text-on-surface">Terms of Service</h1>
         <div className="prose prose-lg max-w-none space-y-6 text-body-md leading-relaxed text-on-surface-variant">
-          <p className="rounded-xl border border-secondary-container bg-secondary-container/20 px-4 py-3 text-label-md text-on-secondary-container">
-            This is placeholder content. Legal review required before launch.
-          </p>
-
-          <p>Last updated: January 2025</p>
+          <p>Last updated: June 2026</p>
 
           <h2 className="text-headline-md text-on-surface">1. Acceptance of Terms</h2>
           <p>By accessing and using the Olea Wholesale website (megatitulocomercio.com), you agree to be bound by these Terms of Service. If you do not agree, please do not use this website.</p>
