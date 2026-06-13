@@ -192,15 +192,28 @@ Requirements:
 
 Return ONLY the JSON object, no markdown fences or extra text.`
 
-  const raw = await provider.generate(SYSTEM_PROMPT, userPrompt)
+  let parsed: Record<string, unknown>
 
-  // Parse JSON from response
-  let jsonStr = raw.trim()
-  if (jsonStr.startsWith('```')) {
-    jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '')
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const raw = await provider.generate(SYSTEM_PROMPT, userPrompt)
+
+    let jsonStr = raw.trim()
+    if (jsonStr.startsWith('```')) {
+      jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '')
+    }
+
+    try {
+      parsed = JSON.parse(jsonStr)
+      break
+    } catch (err) {
+      if (attempt === 2) {
+        throw new Error(`Failed to parse JSON after 2 attempts: ${(err as Error).message}`)
+      }
+      console.log(`   ⚠️  JSON parse failed on attempt ${attempt}, retrying...`)
+    }
   }
 
-  const parsed = JSON.parse(jsonStr)
+  parsed = parsed!
 
   const now = new Date().toISOString()
   const slug = generateSlug(parsed.title || topic.title)
