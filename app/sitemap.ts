@@ -7,16 +7,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getAllProducts()
   const posts = getAllPosts()
 
+  // Last meaningful content update — update when pages change
+  const LAST_UPDATED = '2026-06-13'
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
-    { url: `${baseUrl}/products`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/quote`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
+    { url: baseUrl, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 1 },
+    { url: `${baseUrl}/products`, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/blog`, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/quote`, lastModified: LAST_UPDATED, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/about`, lastModified: LAST_UPDATED, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/contact`, lastModified: LAST_UPDATED, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/faq`, lastModified: LAST_UPDATED, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/privacy`, lastModified: '2026-05-01', changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/terms`, lastModified: '2026-05-01', changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   const productPages: MetadataRoute.Sitemap = products.map((product) => ({
