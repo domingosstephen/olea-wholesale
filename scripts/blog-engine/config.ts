@@ -343,7 +343,7 @@ export const TOPIC_CLUSTERS: TopicCluster[] = [
 // ---------------------------------------------------------------------------
 export const GENERATION_CONFIG = {
   /** Number of articles to generate per run */
-  articlesPerRun: 1,
+  articlesPerRun: 3,
 
   /** Minimum word count per article */
   minWordCount: 1800,
