@@ -10,6 +10,54 @@ import { SpecsTable } from '@/components/product/specs-table'
 import { getProductBySlug, getProductContainers, getProductPricingTiers } from '@/lib/data/products'
 import { formatCurrency } from '@/lib/utils'
 
+const PRODUCT_FAQS: Record<string, { question: string; answer: string }[]> = {
+  'refined-sunflower-oil-high-oleic': [
+    { question: 'What is high-oleic sunflower oil used for?', answer: 'High-oleic sunflower oil is used primarily in industrial frying operations, snack food manufacturing, and commercial food processing. Its high oleic acid content (82%) provides superior oxidative stability, meaning it lasts longer in deep fryers and produces fewer off-flavours during extended use.' },
+    { question: 'What is the smoke point of high-oleic sunflower oil?', answer: 'Our high-oleic refined sunflower oil has a smoke point of 232°C (450°F), making it suitable for high-temperature frying, baking, and roasting applications.' },
+    { question: 'What certifications does this oil carry?', answer: 'This product is ISO 22000 certified and ships with a Certificate of Analysis (COA), Bill of Lading, and Health Certificate with every batch.' },
+  ],
+  'non-gmo-canola-oil-canadian': [
+    { question: 'Is this canola oil verified non-GMO?', answer: 'Yes. This canola oil carries Non-GMO Project Verification and is sourced exclusively from verified non-GMO Canadian canola crops.' },
+    { question: 'What makes expeller-pressed canola oil different?', answer: 'Expeller-pressed extraction uses mechanical pressure rather than chemical solvents (like hexane), preserving the natural nutritional profile including omega-3 fatty acids (11%) and keeping saturated fat low (7%).' },
+    { question: 'What is the minimum order quantity?', answer: 'MOQ is 1,000 liters. Standard pallet configuration is 48 x 20L containers.' },
+  ],
+  'refined-soybean-oil': [
+    { question: 'What industries use refined soybean oil?', answer: 'Refined soybean oil is used in commercial food manufacturing, industrial frying, margarine production, salad dressings, and bakery applications. It is one of the most widely consumed vegetable oils globally.' },
+    { question: 'What is the shelf life of refined soybean oil?', answer: 'Properly stored in climate-controlled conditions, refined soybean oil has a shelf life of 12 to 18 months from the date of manufacture.' },
+    { question: 'What shipping documentation is included?', answer: 'Every shipment includes a Certificate of Analysis, Bill of Lading, Packing List, Health Certificate, and EUR.1 Movement Certificate where applicable.' },
+  ],
+  'crude-sunflower-oil': [
+    { question: 'What is the difference between crude and refined sunflower oil?', answer: 'Crude sunflower oil is extracted but not refined — it retains its natural colour, flavour, and impurities. It is typically purchased by refineries and food manufacturers who perform their own refining process to meet specific product specifications.' },
+    { question: 'Who typically buys crude sunflower oil?', answer: 'Crude sunflower oil buyers include oil refineries, large-scale food manufacturers, and biodiesel producers who require unrefined feedstock for their own processing operations.' },
+    { question: 'What is the free fatty acid content?', answer: 'Our crude sunflower oil has a free fatty acid content below 2%, which is within the standard range for crude vegetable oils destined for refining.' },
+  ],
+  'refined-corn-oil': [
+    { question: 'What is refined corn oil used for in food manufacturing?', answer: 'Refined corn oil is widely used in commercial frying, snack food production, margarine manufacturing, and as an ingredient in baked goods. Its neutral flavour and high smoke point make it versatile for industrial food applications.' },
+    { question: 'Is corn oil suitable for high-temperature frying?', answer: 'Yes. Refined corn oil has a smoke point of approximately 230°C (446°F), making it suitable for deep-frying and commercial food processing at high temperatures.' },
+    { question: 'What container sizes are available?', answer: 'We supply refined corn oil in IBC totes (1,000L), flexitanks (20,000L), and ISO tank containers. Contact us for specific packaging requirements.' },
+  ],
+  'refined-palm-oil': [
+    { question: 'Is your palm oil RSPO certified?', answer: 'Yes. Our refined palm oil carries RSPO (Roundtable on Sustainable Palm Oil) certification, ensuring it meets international sustainability standards for responsible palm oil production.' },
+    { question: 'What is refined palm oil used for?', answer: 'Refined palm oil is used in food manufacturing (margarine, confectionery, baked goods), industrial applications (soaps, cosmetics), and as a cooking oil in commercial kitchens. Its semi-solid texture at room temperature makes it useful as a butter or shortening substitute.' },
+    { question: 'What is the melting point of refined palm oil?', answer: 'Refined palm oil has a melting point of approximately 33-39°C (91-102°F), which gives it a semi-solid consistency at room temperature in temperate climates.' },
+  ],
+  'refined-rapeseed-oil': [
+    { question: 'What is the difference between rapeseed oil and canola oil?', answer: 'Canola is a specific cultivar of rapeseed bred to have low erucic acid (below 2%) and low glucosinolates. Our refined rapeseed oil meets the same low erucic acid standard, making it suitable for food-grade applications.' },
+    { question: 'What are the main applications for refined rapeseed oil?', answer: 'Refined rapeseed oil is used in commercial frying, food manufacturing, salad dressings, margarine production, and biodiesel feedstock. It has a neutral flavour and high smoke point.' },
+    { question: 'What is the lead time for bulk orders?', answer: 'Standard lead time is 14 to 21 days from order confirmation, depending on quantity and shipping destination.' },
+  ],
+  'used-cooking-oil': [
+    { question: 'What is used cooking oil (UCO) used for?', answer: 'Used cooking oil is primarily used as feedstock for biodiesel production and renewable fuel manufacturing. It is also used in animal feed production and industrial applications such as soap and lubricant manufacturing.' },
+    { question: 'What quality standards does your UCO meet?', answer: 'Our used cooking oil is filtered, tested for free fatty acid content and moisture levels, and meets ISCC (International Sustainability and Carbon Certification) standards for biodiesel feedstock.' },
+    { question: 'What is the minimum order for used cooking oil?', answer: 'MOQ is typically one flexitank (approximately 20,000 liters). Contact us for specific volume requirements and pricing.' },
+  ],
+  'crude-palm-oil': [
+    { question: 'Who buys crude palm oil?', answer: 'Crude palm oil (CPO) is purchased by oil refineries, oleochemical manufacturers, biodiesel producers, and large-scale food companies that refine and fractionate the oil into various end products.' },
+    { question: 'What is the difference between crude and refined palm oil?', answer: 'Crude palm oil retains its natural red-orange colour from carotenoids and has not undergone bleaching, deodorising, or fractionation. Refined palm oil is processed to remove colour, odour, and impurities for use in food manufacturing.' },
+    { question: 'Is your crude palm oil RSPO certified?', answer: 'Yes. We source from RSPO-certified plantations to ensure sustainable and responsible palm oil production practices.' },
+  ],
+}
+
 interface Props {
   params: Promise<{ slug: string }>
 }
@@ -79,6 +127,17 @@ export default async function ProductDetailPage({ params }: Props) {
     },
   }
 
+  const productFaqs = PRODUCT_FAQS[slug] || []
+  const faqJsonLd = productFaqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: productFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  } : null
+
   return (
     <section className="py-8 md:py-12">
       <script
@@ -89,6 +148,12 @@ export default async function ProductDetailPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <Container>
         {/* Breadcrumbs */}
         <nav className="mb-4 flex items-center gap-2 font-label text-[11px] text-on-surface-variant sm:mb-6 sm:text-label-sm">
@@ -244,6 +309,24 @@ export default async function ProductDetailPage({ params }: Props) {
 
         {/* Pricing Tiers */}
         {pricingTiers.length > 0 && <PricingTiers product={product} tiers={pricingTiers} />}
+
+        {/* FAQ */}
+        {productFaqs.length > 0 && (
+          <section className="mt-10 sm:mt-16">
+            <div className="mb-4 flex items-center gap-3 sm:mb-6">
+              <div className="h-8 w-1 rounded-full bg-secondary" />
+              <h2 className="text-xl font-semibold text-on-surface sm:text-headline-lg">Frequently Asked Questions</h2>
+            </div>
+            <div className="space-y-4">
+              {productFaqs.map((f) => (
+                <div key={f.question} className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6">
+                  <h3 className="text-sm font-semibold text-on-surface sm:text-base">{f.question}</h3>
+                  <p className="mt-2 text-body-md text-on-surface-variant">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </Container>
     </section>
   )
