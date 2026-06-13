@@ -192,7 +192,8 @@ Requirements:
 
 Return ONLY the JSON object, no markdown fences or extra text.`
 
-  let parsed: Record<string, unknown>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let parsed: any
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     const raw = await provider.generate(SYSTEM_PROMPT, userPrompt)
@@ -213,30 +214,30 @@ Return ONLY the JSON object, no markdown fences or extra text.`
     }
   }
 
-  parsed = parsed!
+  if (!parsed) throw new Error('No article generated')
 
   const now = new Date().toISOString()
-  const slug = generateSlug(parsed.title || topic.title)
+  const slug = generateSlug(String(parsed.title || topic.title))
 
   const post: BlogPost = {
     slug,
-    title: parsed.title || topic.title,
-    seoTitle: parsed.seoTitle || topic.title,
-    seoDescription: parsed.seoDescription || parsed.excerpt?.slice(0, 155) || '',
-    excerpt: parsed.excerpt || '',
-    content: parsed.content || '',
+    title: String(parsed.title || topic.title),
+    seoTitle: String(parsed.seoTitle || topic.title),
+    seoDescription: String(parsed.seoDescription || parsed.excerpt || '').slice(0, 160),
+    excerpt: String(parsed.excerpt || ''),
+    content: String(parsed.content || ''),
     category: category as BlogPost['category'],
-    tags: parsed.tags || topic.secondaryKeywords.slice(0, 5),
-    keywords: parsed.keywords || [topic.primaryKeyword, ...topic.secondaryKeywords],
+    tags: (parsed.tags as string[]) || topic.secondaryKeywords.slice(0, 5),
+    keywords: (parsed.keywords as string[]) || [topic.primaryKeyword, ...topic.secondaryKeywords],
     author,
     publishedAt: now,
     updatedAt: now,
     image: '/images/site/hero.jpeg',
-    imageAlt: `Olea Wholesale — ${parsed.title || topic.title}`,
-    readingTime: parsed.readingTime || Math.ceil((parsed.content || '').split(/\s+/).length / 250),
+    imageAlt: `Olea Wholesale — ${String(parsed.title || topic.title)}`,
+    readingTime: Number(parsed.readingTime) || Math.ceil(String(parsed.content || '').split(/\s+/).length / 250),
     featured: topic.priority === 1,
-    faqItems: parsed.faqItems || [],
-    tldr: parsed.tldr || parsed.excerpt || '',
+    faqItems: (parsed.faqItems as BlogPost['faqItems']) || [],
+    tldr: String(parsed.tldr || parsed.excerpt || ''),
   }
 
   return post
