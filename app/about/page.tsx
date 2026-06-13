@@ -77,6 +77,7 @@ export default function AboutPage() {
                 the global edible oils supply chain, we bridge the gap between origin producers and
                 industrial buyers through precision logistics and rigorous quality control.
               </p>
+              <p className="mt-4 text-label-sm text-on-surface-variant">Last updated: June 2026</p>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
