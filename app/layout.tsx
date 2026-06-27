@@ -37,18 +37,41 @@ export const metadata: Metadata = {
     template: '%s | Olea Wholesale',
   },
   description:
-    'Premium-grade culinary oils supplied at scale. Bulk olive oil, sunflower, canola, and fryer blends for industrial food manufacturers and restaurant chains.',
+    'Premium-grade culinary oils supplied at scale. Bulk sunflower, canola, soybean, palm, and rapeseed oils for industrial food manufacturers and restaurant chains worldwide.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.megatitulocomercio.com'),
+  keywords: [
+    'bulk cooking oil',
+    'wholesale cooking oil',
+    'industrial cooking oil supplier',
+    'bulk sunflower oil',
+    'bulk canola oil',
+    'bulk soybean oil',
+    'bulk palm oil',
+    'bulk rapeseed oil',
+    'edible oil wholesale',
+    'food grade oil supplier',
+    'cooking oil distributor',
+    'used cooking oil UCO',
+    'RSPO certified palm oil',
+    'non-GMO canola oil',
+    'Olea Wholesale',
+  ],
+  authors: [{ name: 'Olea Wholesale', url: 'https://www.megatitulocomercio.com' }],
+  creator: 'Olea Wholesale',
+  publisher: 'Olea Wholesale',
+  category: 'wholesale',
   icons: {
     icon: '/favicon.ico',
   },
+  alternates: { canonical: 'https://www.megatitulocomercio.com' },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'Olea Wholesale',
+    url: 'https://www.megatitulocomercio.com',
     images: [
       {
-        url: '/images/site/hero.jpeg',
+        url: '/images/site/hero-bg.jpg',
         width: 1200,
         height: 630,
         alt: 'Olea Wholesale — Industrial Excellence in Bulk Cooking Oils',
@@ -57,7 +80,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/site/hero.jpeg'],
+    title: 'Olea Wholesale — Industrial Excellence in Bulk Cooking Oils',
+    description: 'Premium-grade bulk cooking oils for industrial food manufacturers and restaurant chains. ISO 22000, RSPO certified.',
+    images: ['/images/site/hero-bg.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'google4eb14543200fea69',
   },
 }
 

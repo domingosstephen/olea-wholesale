@@ -3,9 +3,10 @@ import Link from 'next/link'
 import { Container } from '@/components/layout/container'
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
+  title: 'Frequently Asked Questions — Bulk Cooking Oil Supply',
   description:
-    'Common questions about Olea Wholesale bulk cooking oil supply, certifications, shipping, minimum orders, and pricing.',
+    'Common questions about Olea Wholesale bulk cooking oil supply, certifications, shipping, minimum orders, and pricing. ISO 22000 certified supplier serving 40+ countries.',
+  alternates: { canonical: 'https://www.megatitulocomercio.com/faq' },
 }
 
 const faqs = [

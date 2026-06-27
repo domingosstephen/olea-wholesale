@@ -67,9 +67,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await getProductBySlug(slug)
   if (!product) return { title: 'Product Not Found' }
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.megatitulocomercio.com'
+  const pageUrl = `${baseUrl}/products/${slug}`
+  const imageUrl = product.hero_image_url ? `${baseUrl}${product.hero_image_url}` : `${baseUrl}/images/site/hero-bg.jpg`
+
   return {
     title: `${product.name} — Bulk Wholesale`,
-    description: product.short_description || `Industrial wholesale ${product.name} from Olea Wholesale.`,
+    description: product.short_description || `Buy bulk ${product.name} from Olea Wholesale. ISO 22000 certified, worldwide shipping, competitive pricing. Request a quote today.`,
+    alternates: { canonical: pageUrl },
+    openGraph: {
+      title: `${product.name} | Olea Wholesale`,
+      description: product.short_description || `Bulk ${product.name} — industrial grade, certified quality, worldwide delivery.`,
+      url: pageUrl,
+      siteName: 'Olea Wholesale',
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: product.name }],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} | Olea Wholesale`,
+      description: product.short_description || `Bulk ${product.name} — ISO 22000 certified, worldwide delivery.`,
+      images: [imageUrl],
+    },
   }
 }
 

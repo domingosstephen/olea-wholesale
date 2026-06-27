@@ -5,9 +5,10 @@ import { ShieldCheck, Globe, Users, Award, TrendingUp, Truck } from 'lucide-reac
 import { Container } from '@/components/layout/container'
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About Olea Wholesale — Certified Bulk Cooking Oil Supplier',
   description:
-    'Olea Wholesale is a certified B2B supplier of premium bulk cooking oils, serving industrial food manufacturers and restaurant chains globally.',
+    'Olea Wholesale is a certified B2B supplier of premium bulk cooking oils, serving industrial food manufacturers and restaurant chains across 40+ countries. ISO 22000, RSPO certified.',
+  alternates: { canonical: 'https://www.megatitulocomercio.com/about' },
 }
 
 const values = [
@@ -53,9 +54,19 @@ const certifications = [
   { name: 'Non-GMO Verified', description: 'Project Verified' },
 ]
 
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.megatitulocomercio.com' },
+    { '@type': 'ListItem', position: 2, name: 'About Olea Wholesale', item: 'https://www.megatitulocomercio.com/about' },
+  ],
+}
+
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="py-16 md:py-24">
         <Container>
