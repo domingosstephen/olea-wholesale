@@ -4,6 +4,7 @@ import { QuoteForm } from '@/components/forms/quote-form'
 import { getProductBySlug, getAllProducts } from '@/lib/data/products'
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.megatitulocomercio.com/quote' },
   title: 'Request a Quote',
   description:
     'Get a customized quote for bulk cooking oils. Our team responds within 1 business day with pricing, availability, and logistics details.',

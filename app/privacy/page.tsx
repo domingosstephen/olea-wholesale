@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Container } from '@/components/layout/container'
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.megatitulocomercio.com/privacy' },
   title: 'Privacy Policy',
   description: 'Olea Wholesale privacy policy — how we collect, use, and protect your data.',
 }

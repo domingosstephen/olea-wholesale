@@ -8,6 +8,7 @@ import { EmptyState } from '@/components/catalog/empty-state'
 import { getProducts } from '@/lib/data/products'
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.megatitulocomercio.com/products' },
   title: 'Industrial Supply Catalog',
   description:
     'Browse our full range of premium wholesale cooking oils. Extra virgin olive oil, sunflower, canola, and custom blends for industrial food manufacturing.',

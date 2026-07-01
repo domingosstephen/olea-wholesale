@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Container } from '@/components/layout/container'
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.megatitulocomercio.com/terms' },
   title: 'Terms of Service',
   description: 'Olea Wholesale terms of service for website use and business inquiries.',
 }

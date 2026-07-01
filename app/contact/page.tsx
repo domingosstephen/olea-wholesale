@@ -4,6 +4,7 @@ import { Container } from '@/components/layout/container'
 import { ContactForm } from '@/components/forms/contact-form'
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.megatitulocomercio.com/contact' },
   title: 'Contact Us',
   description:
     'Get in touch with Olea Wholesale. Reach our team for partnership inquiries, press, careers, or general questions.',
