@@ -140,9 +140,42 @@ export default async function ProductDetailPage({ params }: Props) {
     brand: { '@type': 'Brand', name: 'Olea Wholesale' },
     offers: {
       '@type': 'Offer',
+      url: `https://www.megatitulocomercio.com/products/${slug}`,
       priceCurrency: product.base_currency,
       price: (product.base_unit_price_cents / 100).toFixed(2),
       availability: product.status === 'active' ? 'https://schema.org/InStock' : product.status === 'backorder' ? 'https://schema.org/BackOrder' : 'https://schema.org/LimitedAvailability',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'ES',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: product.base_currency,
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'ES',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 1,
+            maxValue: 3,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: product.lead_time_days,
+            maxValue: product.lead_time_days + 7,
+            unitCode: 'DAY',
+          },
+        },
+      },
     },
   }
 
