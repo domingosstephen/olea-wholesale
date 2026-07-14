@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Blog — Bulk Cooking Oil Insights & Industry Guides',
   description:
     'Expert guides on bulk cooking oil procurement, market trends, shipping logistics, and food safety standards for industrial buyers and distributors.',
+  alternates: { canonical: 'https://www.megatitulocomercio.com/blog' },
 }
 
 export default function BlogPage() {

@@ -72,8 +72,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageUrl = product.hero_image_url ? `${baseUrl}${product.hero_image_url}` : `${baseUrl}/images/site/hero-bg.jpg`
 
   return {
-    title: `${product.name} — Bulk Wholesale`,
-    description: product.short_description || `Buy bulk ${product.name} from Olea Wholesale. ISO 22000 certified, worldwide shipping, competitive pricing. Request a quote today.`,
+    title: `Buy Bulk ${product.name} — Wholesale Pricing & Specs | Olea`,
+    description: product.short_description || `Buy bulk ${product.name} wholesale from Olea Wholesale. ISO 22000 certified, worldwide shipping, flexible container options (IBC, flexitank, ISO tank). Request a quote today.`,
     alternates: { canonical: pageUrl },
     openGraph: {
       title: `${product.name} | Olea Wholesale`,

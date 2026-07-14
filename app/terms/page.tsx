@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.megatitulocomercio.com/terms' },
   title: 'Terms of Service',
   description: 'Olea Wholesale terms of service for website use and business inquiries.',
+  robots: { index: false, follow: false },
 }
 
 export default function TermsPage() {

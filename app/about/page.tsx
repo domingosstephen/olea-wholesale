@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ShieldCheck, Globe, Users, Award, TrendingUp, Truck } from 'lucide-react'
+import { ShieldCheck, Globe, Award, TrendingUp, Truck, CheckCircle } from 'lucide-react'
 import { Container } from '@/components/layout/container'
 
 export const metadata: Metadata = {
@@ -41,10 +41,10 @@ const stats = [
   { value: '12+', label: 'Source Origins' },
 ]
 
-const leadership = [
-  { name: 'Stephano Leonessi', role: 'Founder & Managing Director', description: '15+ years in international commodities trading and supply chain management.' },
-  { name: 'Maria Santos', role: 'Head of Supply Chain', description: 'Former logistics director at a Fortune 500 food manufacturer.' },
-  { name: 'Ahmed Al-Rashid', role: 'Head of Quality Assurance', description: 'PhD in Food Science, former ISO auditor with 10+ years in edible oils QA.' },
+const expertise = [
+  { title: 'Commodity Trading', description: 'Deep experience in global edible oil markets, commodity pricing, and origin sourcing across 12+ production regions.' },
+  { title: 'Supply Chain Management', description: 'End-to-end logistics expertise from origin refineries to destination ports, covering CIF and FOB shipping terms worldwide.' },
+  { title: 'Food Safety & Quality', description: 'ISO 22000 compliance and independent laboratory testing built into every order — Certificate of Analysis ships with every batch.' },
 ]
 
 const certifications = [
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 About Olea Wholesale
               </p>
               <h1 className="mb-6 text-display-lg text-on-surface">
-                Industrial Excellence in Every Supply Chain
+                Certified Bulk Cooking Oil Supplier — Serving Industrial Buyers in 40+ Countries
               </h1>
               <p className="mb-4 text-body-lg text-on-surface-variant">
                 Olea Wholesale Corp. is a certified B2B supplier of premium bulk cooking oils,
@@ -159,21 +159,23 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Leadership */}
+      {/* Expertise */}
       <section className="py-16 md:py-24">
         <Container>
           <div className="mb-12 text-center">
-            <h2 className="text-headline-lg text-on-surface">Leadership Team</h2>
+            <h2 className="text-headline-lg text-on-surface">Our Expertise</h2>
+            <p className="mt-2 text-body-lg text-on-surface-variant">
+              The capabilities that set Olea Wholesale apart in the global edible oils market
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {leadership.map((person) => (
-              <div key={person.name} className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6">
+            {expertise.map((item) => (
+              <div key={item.title} className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6">
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-surface-container">
-                  <Users className="h-8 w-8 text-outline" strokeWidth={1.5} />
+                  <CheckCircle className="h-8 w-8 text-secondary" strokeWidth={1.5} />
                 </div>
-                <h3 className="mb-1 text-headline-md text-on-surface">{person.name}</h3>
-                <p className="mb-3 font-label text-label-md text-secondary">{person.role}</p>
-                <p className="text-body-md text-on-surface-variant">{person.description}</p>
+                <h3 className="mb-2 text-headline-md text-on-surface">{item.title}</h3>
+                <p className="text-body-md text-on-surface-variant">{item.description}</p>
               </div>
             ))}
           </div>

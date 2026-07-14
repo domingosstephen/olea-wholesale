@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = getAllPosts()
 
   // Last meaningful content update — update when pages change
-  const LAST_UPDATED = '2026-06-13'
+  const LAST_UPDATED = '2026-07-14'
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 1 },
@@ -18,8 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/about`, lastModified: LAST_UPDATED, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/contact`, lastModified: LAST_UPDATED, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/faq`, lastModified: LAST_UPDATED, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/privacy`, lastModified: '2026-05-01', changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${baseUrl}/terms`, lastModified: '2026-05-01', changeFrequency: 'yearly', priority: 0.3 },
+    // privacy and terms are noindex — excluded from sitemap
   ]
 
   const productPages: MetadataRoute.Sitemap = products.map((product) => ({

@@ -9,9 +9,9 @@ import { getProducts } from '@/lib/data/products'
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.megatitulocomercio.com/products' },
-  title: 'Industrial Supply Catalog',
+  title: 'Wholesale Cooking Oil Catalog — Bulk Sunflower, Canola, Palm & More',
   description:
-    'Browse our full range of premium wholesale cooking oils. Extra virgin olive oil, sunflower, canola, and custom blends for industrial food manufacturing.',
+    'Browse our full wholesale cooking oil catalog: refined sunflower oil, non-GMO canola oil, soybean oil, RSPO palm oil, rapeseed oil, corn oil, and UCO. ISO 22000 certified, worldwide delivery.',
 }
 
 interface Props {

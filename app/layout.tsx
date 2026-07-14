@@ -33,11 +33,11 @@ const metropolis = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Olea Wholesale — Industrial Excellence in Bulk Cooking Oils',
+    default: 'Olea Wholesale — Bulk Cooking Oil Supplier Worldwide',
     template: '%s | Olea Wholesale',
   },
   description:
-    'Premium-grade culinary oils supplied at scale. Bulk sunflower, canola, soybean, palm, and rapeseed oils for industrial food manufacturers and restaurant chains worldwide.',
+    'Wholesale bulk cooking oil supplier. Refined sunflower, canola, soybean, palm, rapeseed, corn oil, and UCO for industrial food manufacturers and restaurant chains. ISO 22000 certified, 40+ countries.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.megatitulocomercio.com'),
   keywords: [
     'bulk cooking oil',

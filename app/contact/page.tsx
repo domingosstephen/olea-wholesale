@@ -5,9 +5,9 @@ import { ContactForm } from '@/components/forms/contact-form'
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.megatitulocomercio.com/contact' },
-  title: 'Contact Us',
+  title: 'Contact Olea Wholesale — Bulk Cooking Oil Supplier Inquiries',
   description:
-    'Get in touch with Olea Wholesale. Reach our team for partnership inquiries, press, careers, or general questions.',
+    'Contact Olea Wholesale for bulk cooking oil pricing, product availability, and wholesale partnership inquiries. Our team responds within 1 business day. Portugal-based, serving 40+ countries.',
 }
 
 const localBusinessJsonLd = {
@@ -39,10 +39,24 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-[1fr_380px]">
           {/* Form */}
           <div>
-            <h1 className="mb-3 text-display-lg text-on-surface">Contact Us</h1>
-            <p className="mb-8 text-body-lg text-on-surface-variant">
-              Have a question or want to explore a partnership? We&apos;d love to hear from you.
+            <h1 className="mb-3 text-display-lg text-on-surface">Contact Olea Wholesale</h1>
+            <p className="mb-6 text-body-lg text-on-surface-variant">
+              Reach our sales team for bulk cooking oil pricing, product specifications, and wholesale supply agreements. We work with food manufacturers, restaurant chains, and distributors across 40+ countries.
             </p>
+            <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3">
+                <p className="text-label-sm font-semibold text-on-surface">Response Time</p>
+                <p className="mt-0.5 text-body-md text-on-surface-variant">Within 1 business day</p>
+              </div>
+              <div className="rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3">
+                <p className="text-label-sm font-semibold text-on-surface">Languages</p>
+                <p className="mt-0.5 text-body-md text-on-surface-variant">English, Portuguese</p>
+              </div>
+              <div className="rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3 col-span-2 sm:col-span-1">
+                <p className="text-label-sm font-semibold text-on-surface">Office Hours</p>
+                <p className="mt-0.5 text-body-md text-on-surface-variant">Mon–Fri, 9:00–18:00 WET</p>
+              </div>
+            </div>
             <ContactForm />
           </div>
 

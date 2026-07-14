@@ -21,11 +21,11 @@ export function Hero() {
             Trusted by 450+ Industrial Partners
           </span>
           <h1 className="text-[32px] font-bold leading-[1.15] tracking-tight text-white sm:text-[40px] md:text-display-lg">
-            Industrial Excellence in Every Drop
+            Bulk Cooking Oil Supplier — Wholesale Edible Oils at Scale
           </h1>
           <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/85 sm:mt-6 sm:text-body-lg">
-            Premium-grade culinary oils supplied at scale. Precision-engineered logistics for global
-            food manufacturers and high-volume wholesale distributors.
+            Refined sunflower, canola, soybean, palm, and rapeseed oil in industrial quantities.
+            ISO 22000 certified. Worldwide delivery to food manufacturers and distributors.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row sm:gap-4">
             <Link

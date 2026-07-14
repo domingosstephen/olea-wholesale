@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.megatitulocomercio.com/privacy' },
   title: 'Privacy Policy',
   description: 'Olea Wholesale privacy policy — how we collect, use, and protect your data.',
+  robots: { index: false, follow: false },
 }
 
 export default function PrivacyPage() {
